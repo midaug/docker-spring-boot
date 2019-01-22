@@ -17,11 +17,11 @@ RUN apk --no-cache add tzdata  && \
 RUN mkdir /data && mkdir /data/logs
 
 VOLUME ["/tmp", "/data"] 
-EXPOSE 8080
 
 ENV JAVA_OPTS=""
+ENV APP_TYPE="war"
 
 WORKDIR  /data
 
 # 启动命令行
-ENTRYPOINT [ "sh", "-c", "java -Dserver.port=8080 $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar /data/app.war | tee /data/logs/run.log" ]
+ENTRYPOINT [ "sh", "-c", "java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar /data/app.$APP_TYPE | tee /data/logs/run.log" ]
