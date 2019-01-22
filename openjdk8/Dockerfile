@@ -5,8 +5,7 @@ FROM openjdk:8u191-jdk-alpine3.8
 LABEL MAINTAINER midaug "blog.midaug.win"
 
 # 设定系统语言环境
-ENV LANG="zh_CN.UTF-8" \
-LC_ALL="zh_CN.UTF-8"
+ENV LANG="zh_CN.UTF-8"
 
 # 配置系统时区
 RUN apk --no-cache add tzdata  && \
