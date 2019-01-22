@@ -24,4 +24,4 @@ ENV JAVA_OPTS=""
 WORKDIR  /data
 
 # 启动命令行
-ENTRYPOINT [ "sh", "-c", "java -Dserver.port=8080 $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar /data/app.jar | tee /data/logs/run.log" ]
+ENTRYPOINT [ "sh", "-c", "java -Dserver.port=8080 $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar /data/app.war | tee /data/logs/run.log" ]
