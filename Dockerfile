@@ -10,7 +10,7 @@ LC_ALL="zh_CN.UTF-8"
 
 # 配置系统时区
 RUN apk --no-cache add tzdata  && \
-    ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
+    cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime  && \
     echo "Asia/Shanghai" > /etc/timezone  && \
     apk del tzdata
 
