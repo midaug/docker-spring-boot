@@ -5,8 +5,7 @@ FROM openjdk:11.0.2-jdk-oracle
 LABEL MAINTAINER midaug "blog.midaug.win"
 
 # 设定系统语言环境
-ENV LANG="zh_CN.UTF-8" \
-LC_ALL="zh_CN.UTF-8"
+ENV LANG="zh_CN.UTF-8"
 
 # 配置系统时区
 ENV TZ=Asia/Shanghai
