@@ -8,8 +8,10 @@ LABEL MAINTAINER midaug "blog.midaug.win"
 ENV LANG="zh_CN.UTF-8"
 
 # 配置系统时区
-ENV TZ=Asia/Shanghai
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+RUN apk --no-cache add tzdata  && \
+    cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime  && \
+    echo "Asia/Shanghai" > /etc/timezone  && \
+    apk del tzdata
  
 RUN mkdir /data && mkdir /data/logs
 
